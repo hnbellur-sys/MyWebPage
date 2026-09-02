@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsha Bellur | Executive Portfolio</title>
+    <style>
+        :root {
+            --navy-dark: #0F172A;
+            --navy-primary: #1E3A8A;
+            --navy-light: #2563EB;
+            --slate-gray: #475569;
+            --bg-light: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+            --text-dark: #1E293B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .brand-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--navy-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
+            color: #FFFFFF;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p.title {
+            font-size: 1.25rem;
+            color: #93C5FD;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p.summary {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #E2E8F0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-links a {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0 0.25rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--navy-light);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: #1D4ED8;
+        }
+
+        .btn-outline {
+            border: 1px solid #93C5FD;
+            color: #FFFFFF;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Layout Main */
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--navy-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Experience Grid */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.2rem;
+            color: var(--navy-primary);
+            font-weight: 700;
+        }
+
+        .company-name {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .date-range {
+            font-size: 0.85rem;
+            color: var(--slate-gray);
+            font-weight: 500;
+        }
+
+        .card-body ul {
+            list-style-position: outside;
+            margin-left: 1.2rem;
+            color: var(--slate-gray);
+        }
+
+        .card-body li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Skills & Competencies Tiles */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-group {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .skill-group h3 {
+            font-size: 1.05rem;
+            color: var(--navy-primary);
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.25rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            color: var(--slate-gray);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy-dark);
+            color: #94A3B8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-name">HARSHA BELLUR</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#competencies">Competencies</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <h1>Harsha Bellur</h1>
+                <p class="title">Chief Information Officer | Board Advisor | Executive Leader</p>
+                <p class="summary">
+                    Results-oriented Technology Executive with extensive experience driving strategic enterprise transformations, digital modernization, and scalable operational solutions. Trusted advisor to Boards and C-Suite leaders, aligning complex technology strategies with core business growth, efficiency, and governance.
+                </p>
+                <div class="hero-links">
+                    <a href="https://www.linkedin.com/in/harshabellur/" target="_blank" rel="noopener" class="btn-primary">LinkedIn Profile</a>
+                    <a href="#contact" class="btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-container">
+            
+            <section id="experience">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <div class="role-title">Chief Information Officer</div>
+                                <div class="company-name">Executive Leadership Role</div>
+                            </div>
+                            <div class="date-range">Present</div>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Direct global technology strategies, enterprise architecture, and operational frameworks to support core business objectives.</li>
+                                <li>Partner with C-level leadership and the Board of Directors to define digital transformation roadmaps, technology risk frameworks, and capital investments.</li>
+                                <li>Drive modern cloud architecture, cybersecurity posture enhancements, and cross-functional operational scaling.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <div class="role-title">Senior Vice President & Strategic Technology Leader</div>
+                                <div class="company-name">Enterprise Technology Division</div>
+                            </div>
+                            <div class="date-range">Prior Leadership Roles</div>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Led enterprise-wide system integrations and application modernization initiatives, improving performance and reducing operational drag.</li>
+                                <li>Established robust IT governance, compliance structures, and disaster recovery standards across distributed teams.</li>
+                                <li>Managed multi-million dollar technology budgets, optimizing vendor contracts and strategic partner relationships.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="competencies">
+                <h2 class="section-title">Core Competencies & Leadership</h2>
+                <div class="grid-2">
+                    
+                    <div class="skill-group">
+                        <h3>Strategic Leadership</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Executive Strategy</span>
+                            <span class="tag">Board Governance</span>
+                            <span class="tag">Digital Transformation</span>
+                            <span class="tag">Capital Budgeting</span>
+                            <span class="tag">M&A Technology Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Technology & Architecture</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Enterprise Architecture</span>
+                            <span class="tag">Cloud & Infrastructure Modernization</span>
+                            <span class="tag">Cybersecurity & Risk Management</span>
+                            <span class="tag">Data Strategy & Analytics</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Operational Excellence</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Global Team Building</span>
+                            <span class="tag">Vendor Management</span>
+                            <span class="tag">Process Optimization</span>
+                            <span class="tag">Agile Delivery</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Industry Knowledge</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Large-Scale Enterprise Systems</span>
+                            <span class="tag">Regulatory Compliance</span>
+                            <span class="tag">Strategic Sourcing</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="education">
+                <h2 class="section-title">Education & Credentials</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="role-title">Graduate & Undergraduate Degrees</div>
+                        <div class="company-name" style="margin-top: 0.5rem;">Advanced Technology & Business Education</div>
+                        <p style="font-size: 0.9rem; color: var(--slate-gray); margin-top: 0.5rem;">
+                            Focused on Information Systems, Strategic Management, and Computer Science.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="role-title">Board & Advisory Leadership</div>
+                        <div class="company-name" style="margin-top: 0.5rem;">Strategic Advisory Roles</div>
+                        <p style="font-size: 0.9rem; color: var(--slate-gray); margin-top: 0.5rem;">
+                            Active member and advisor for executive network initiatives and technology governance boards.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2 class="section-title">Executive Contact</h2>
+                <div class="card" style="text-align: center; padding: 2.5rem;">
+                    <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1rem;">
+                        Open for C-level executive, advisory, and board-level opportunities.
+                    </p>
+                    <a href="https://www.linkedin.com/in/harshabellur/" target="_blank" rel="noopener" class="btn-primary" style="display: inline-block; padding: 0.75rem 1.75rem; text-decoration: none; border-radius: 4px;">Connect on LinkedIn</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Harsha Bellur. All Rights Reserved. Designed for strategic leadership presence.</p>
+    </footer>
+
+</body>
+</html>
